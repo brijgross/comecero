@@ -25,7 +25,7 @@
 
             <div class="panel">
                 <div class="panel-heading">
-                    <span class="panel-title">Payment Details</span>
+                    <span class="panel-title">Transaction Details</span>
                     <div class="panel-heading-controls">
                         <span class="btn btn-success btn btn-sm btn-danger" refund payment="payment" gateway-account-id="payment.gateway.account_id" fees="payment.fees.data" items="payment.order.items" shipping-item="payment.order.shipping_item" resource="refunds" method="create" translate>Process Refund</span>
                         <span class="btn btn-danger btn btn-sm spacer-t5" void payment="payment" error="exception.error" translate>Cancel</span>
@@ -35,7 +35,7 @@
 
                 <div class="panel-body panel-tight">
                     <div class="col-xs-12 col-sm-6 panel-tight-row">
-                        <div class="col-xs-12 col-md-4 panel-tight-section"><label>Payment ID</label></div>
+                        <div class="col-xs-12 col-md-4 panel-tight-section"><label>Transaction ID</label></div>
                         <div class="col-xs-12 col-md-8 panel-tight-section"><div>{{payment.payment_id}}</div></div>
                     </div>
 
@@ -79,14 +79,18 @@
                         {{payment.description}}
                     </div>
 
+                    <!--
+
                     <div class="col-xs-12 panel-tight-row">
                         <div class="col-xs-12 panel-tight-section"><button class="btn btn-info btn-xs" transaction-debug url="payment.debug">Debug</button></div>
                     </div>
 
+                    -->
+
                     <div class="col-xs-12 panel-tight-row" ng-if="payment.risk_decline">
                         <div class="panel-body" style="padding-bottom:0px;">
                             <div class=" alert alert-warning spacer-b5 text-center">
-                                <div translate>This payment was declined by the gateway due to high risk factors.</div>
+                                <div translate>This transaction was declined by the gateway due to high risk factors.</div>
                             </div>
                         </div>
                     </div>
@@ -117,6 +121,8 @@
             </div>
 
             <div customer-edit="payment.customer" error="exception.error"></div>
+
+            <!--
 
             <div class="panel" resource="gateways" method="read">
                 <div class="panel-heading">
@@ -155,6 +161,8 @@
             <ledger-items items="payment.fees.data" description-property="type" panel-title="{{'Fees' | translate}}" no-items-message="{{'No fees for this payment' | translate}}" resource="fees" method="read"></ledger-items>
 
             <ledger-items items="payment.commissions.data" description-property="type" panel-title="{{'Commissions' | translate}}" no-items-message="{{'No commissions for this payment' | translate}}" resource="commissions" method="read"></ledger-items>
+
+            -->
 
             <div class="panel" ng-if="payment.fraud_result">
                 <div class="panel-heading">

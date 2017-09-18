@@ -11,7 +11,7 @@
 
     <div class="gridtable-header hidden-xs hidden-sm">
 
-        <div class="col-md-3"><label>Payment ID</label></div>
+        <div class="col-md-3"><label>Transaction ID</label></div>
         <div class="col-md-2"><label ng-click="sort('date_created', !userParams.desc)" class="pointer text-primary" translate>Date</label>&nbsp;<i class="icon fa fa-caret-down" ng-if="getSortValue() == 'date_created' && userParams.desc == true"></i><i class="icon fa fa-caret-up" ng-if="getSortValue() == 'date_created' && userParams.desc == false"></i></div>
         <div class="col-md-3 btn-header">
             <div class="btn-group" uib-dropdown>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="col-md-2"><label ng-click="sort('date_modified', !userParams.desc)" class="pointer text-primary" translate>Updated</label>&nbsp;<i class="icon fa fa-caret-down" ng-if="getSortValue() == 'date_modified' && userParams.desc == true"></i><i class="icon fa fa-caret-up" ng-if="getSortValue() == 'date_modified' && userParams.desc == false"></i></div>
-        <div class="col-md-2 text-right"><label translate>Total</label></div>
+        <div class="col-md-2 text-right"><label translate>Amount</label></div>
 
     </div>
 
